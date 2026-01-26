@@ -31,8 +31,7 @@ else:
         f.write(job.job_id())
 
 result = job.result()[0]
-bitstrings = result.data.c.get_bitstrings()
-counts = dict(Counter(bitstrings))
+counts = result.data.c.get_counts()
 for key in counts:
     counts[key] = float(counts[key]) / sample
 plot_histogram(counts)

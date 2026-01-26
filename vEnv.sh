@@ -16,7 +16,7 @@ pip install --upgrade pip
 pip install jupyterlab qiskit
 
 # Installer les bibliothèques supplémentaires
-pip install qiskit-ibm-runtime sympy matplotlib pylatexenc
+pip install qiskit-ibm-runtime sympy matplotlib pylatexenc qiskit-aer
 
 # --- Configurer IPython pour activer %matplotlib inline par défaut ---
 # Créer le profil par défaut si nécessaire

@@ -16,7 +16,7 @@ sampler_sim = BackendSamplerV2(backend=backend_sim)
 target = backend_sim.target
 pm = generate_preset_pass_manager(target=target, optimization_level=3)
 
-sample = 500;
+sample = 500
 qc_isa = pm.run(circuit)
 job = sampler_sim.run([qc_isa],shots=sample)
 
@@ -25,15 +25,15 @@ statistics = res[0].data.c.get_counts()
 
 for key in statistics:
     statistics[key] = float(statistics[key]) / sample
-display(plot_histogram(statistics));
+display(plot_histogram(statistics))
 
 
 circuit2 = QuantumCircuit(1)
 circuit2.h(0)
-ket0 = Statevector([1, 0]);
-v = ket0.evolve(circuit2);
+ket0 = Statevector([1, 0])
+v = ket0.evolve(circuit2)
 
-display(v.draw("latex"));
+display(v.draw("latex"))
 
 #statistics = v.sample_counts(sample);
 #ket0 = Statevector([1, 0]);

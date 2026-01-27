@@ -8,6 +8,6 @@
 rm -rf qiskit_env
 
 # To connect to IBM using API KEY do :
-from qiskit_ibm_provider import IBMProvider
-IBMProvider.save_account(token="API_KEY", overwrite=True)
+from qiskit_ibm_runtime import QiskitRuntimeService
+QiskitRuntimeService.save_account(token="API_TOKEN", overwrite=True)
 # Private API key is not shown here and should be unique and never shared

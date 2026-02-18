@@ -6,11 +6,6 @@ from qiskit.transpiler.preset_passmanagers import generate_preset_pass_manager
 import sys
 from qiskit.visualization import plot_histogram
 
-n = 3
-
-if n < 2:
-    sys.exit("Error : Qbit length is too short")
-
 #Define the oracle here
 #Oracle from the subject
 oracle = QuantumCircuit(3)
@@ -20,6 +15,9 @@ oracle.h(2)
 display(oracle.draw(output="mpl"))
 
 #Grover operator : Oracle + diffuser
+n = oracle.num_qubits
+if n < 2:
+    sys.exit("Error : Qbit length is too short")
 grover_operator = QuantumCircuit(n)
 grover_operator.compose(oracle, inplace=True)
 grover_operator.h(range(n))
@@ -34,8 +32,8 @@ display(grover_operator.draw(output="mpl"))
 
 k_opt = 1
 
-if k_opt < 0:
-    sys.exit("Error : nb of iteration must be greater or equal ")
+if k_opt < 1:
+    sys.exit("Error : nb of iteration must be greater or equal 1")
 
 qc = QuantumCircuit(n, n)
 qc.h(range(n))

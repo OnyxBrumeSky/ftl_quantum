@@ -2,10 +2,7 @@ from qiskit import QuantumCircuit
 from qiskit.transpiler import generate_preset_pass_manager
 from qiskit_ibm_runtime import QiskitRuntimeService, Sampler
 from qiskit.visualization import plot_histogram
-import matplotlib.pyplot as plt
-from collections import Counter
 import os
-import pickle
 
 qc = QuantumCircuit(2, 2)
 qc.h(0)

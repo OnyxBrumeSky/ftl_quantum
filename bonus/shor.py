@@ -1,16 +1,12 @@
 from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister
 from qiskit.primitives import BackendSamplerV2
 from qiskit_aer import AerSimulator
-from qiskit_aer.noise import NoiseModel 
 from qiskit.transpiler.preset_passmanagers import generate_preset_pass_manager
-import sys
 from qiskit.visualization import plot_histogram
 from math import floor, gcd, log
 import numpy as np
 from qiskit.circuit.library import QFTGate
-from qiskit_ibm_runtime import QiskitRuntimeService, Sampler
 from fractions import Fraction
-import sys
 
 N = 15
 a = 11
